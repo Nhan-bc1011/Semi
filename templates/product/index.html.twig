@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="bs-example" data-example-id="striped-table">
+    <div class="row">
+        <div class="col-sm-4">
+        <div class="bs-example" data-example-id="striped-table">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>#</th>
+{#                <th>ID</th>#}
                 <th>Category</th>
 
             </tr>
@@ -13,7 +15,7 @@
             <tbody>
             {% for category in categories %}
                 <tr>
-                    <th scope="row">{{ category.id }}</th>
+{#                    <th scope="row">{{ category.id }}</th>#}
                     <td><a href="{{path('productByCat',{'id':category.id})}} ">{{ category.catname }}</a></td>
 
                     <td>
@@ -26,14 +28,17 @@
                     </td>
                 </tr>
             {% endfor %}
+
             </tbody>
         </table>
-    </div>
-    <div class="bs-example" data-example-id="striped-table">
+        </div>
+        </div>
+        <div class="col-sm-8">
+        <div class="bs-example" data-example-id="striped-table">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>#</th>
+{#                <th>ID</th>#}
                 <th>Product Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
@@ -45,12 +50,12 @@
             <tbody>
             {% for product in products %}
                 <tr>
-                    <th scope="row">{{ product.id }}</th>
+{#                    <th scope="row">{{ product.id }}</th>#}
                     <td>{{ product.proname }}</td>
                     <td>{{ product.price }}</td>
                     <td>{{ product.quantity }}</td>
                     <td>{{ product.description }}</td>
-                    <td> <a href="{{ asset('upload/productImages/' ~ product.image) }}">View image</a><td>
+                    <td><img src="{{ asset('upload/productImages/' ~ product.image) }}"width="180px" height="180px" ><td>
                     <td>
                         {#                        <a href="{{ path('todo_details', {'id': product.id}) }} " class='btn btn-success'>View</a>#}
                         {#                        <a href="{{ path('todo_edit', {'id': product.id}) }}" class='btn btn-default'>Edit</a>#}
@@ -63,5 +68,7 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>
+        </div>
     </div>
 {% endblock %}

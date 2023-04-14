@@ -1,16 +1,20 @@
-{% extends 'auth.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
 {% block body %}
+    <style type="text/css">
+        .div1{
+            text-align: center;
+        }
+    </style>
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="https://s.tmimgcdn.com/scr/1200x750/183700/modern-shopping-business-logo-template_183766-original.jpg" alt="IMG">
+                <img src="https://pendecor.vn/uploads/files/2021/07/27/thiet-ke-logo-shop-giay-2.png" alt="IMG" class="col-sm-6">
             </div>
             {{ form_start(registrationForm) }}
-            <div class="login100-form validate-form">
+            <div class="login100-form validate-form" class="col-sm-6" class="div1">
                     <span class="login100-form-title">
                         Sign-up member
                     </span>
@@ -34,7 +38,7 @@
                 </div>
                 {{ form_row(registrationForm.agreeTerms) }}
                 <div class="container-login100-form-btn">
-                    <button type="submit" class="login100-form-btn">
+                    <button type="submit" class="btn btn-info" >
                         Register
                     </button>
                 </div>
