@@ -8,6 +8,7 @@
         <li class="list-group-item">Price: {{ products.price }}</li>
         <li class="list-group-item">Quantity: {{ products.quantity }}</li>
         <li class="list-group-item">Image: {{ products.image }}</li>
+        <li class="list-group-item"><img src="{{ asset('upload/productImages/' ~ products.image) }}"width="180px" height="180px" ></li>
     </ul>
     <p>{{ products.description }}</p>
 {% endblock %}
